@@ -2,19 +2,19 @@ sudo: required
 services: -docker
 
 before_install:
-  - docker build -t mbrandt587/react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t mbrandt5874/react-test -f ./client/Dockerfile.dev ./client
 script:
-  - docker run mbrandt587/react-test npm test -- --coverage CI=true
+  - docker run mbrandt5874/react-test npm test -- --coverage
 
 after_success:
-  - docker build -t mbrandt587/multi-client ./client
-  - docker build -t mbrandt587/multi-nginx ./nginx
-  - docker build -t mbrandt587/multi-server ./server
-  - docker build -t mbrandt587/multi-worker ./worker
+  - docker build -t mbrandt5874/multi-client ./client
+  - docker build -t mbrandt5874/multi-nginx ./nginx
+  - docker build -t mbrandt5874/multi-server ./server
+  - docker build -t mbrandt5874/multi-worker ./worker
   # Login to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
-  - docker push mbrandt587/multi-client
-  - docker push mbrandt587/multi-nginx
-  - docker push mbrandt587/multi-server
-  - docker push mbrandt587/multi-worker
+  - docker push mbrandt5874/multi-client
+  - docker push mbrandt5874/multi-nginx
+  - docker push mbrandt5874/multi-server
+  - docker push mbrandt5874/multi-worker
