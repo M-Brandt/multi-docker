@@ -20,12 +20,6 @@
       "essential": false
     },
     {
-      "name": "worker",
-      "image": "mbrandt5874/multi-worker",
-      "hostname": "worker",
-      "essential": false
-    },
-    {
       "name": "nginx",
       "image": "mbrandt5874/multi-nginx",
       "hostname": "nginx",
